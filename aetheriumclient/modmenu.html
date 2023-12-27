@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aetherium Client 1.8.9</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <img id="parallax" class="bg">
+    <script>const parallax = document.getElementById('parallax');
+
+      window.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth - e.pageX * 5) / 100;
+        const y = (window.innerHeight - e.pageY * 5) / 100;
+      
+        parallax.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+      </script>
+      <div class="home">
+        <div class="topbar">
+            <div class="navelem">
+                <i style="color: #fff;" class="bx bx-grid-alt"></i>
+            </div>
+            <div class="navelem">
+                <i class='bx bx-edit'></i>
+            </div>
+        </div>
+        <div class="clickgui">
+            <div class="topgui">
+                <div class="leftgui">
+                    <img src="logo.png" alt="">
+                <div class="brand">Aetherium</div>
+                </div>
+                <div class="navelem"><i class="bx bx-x"></i></div>
+                
+            </div>
+        </div>
+      </div>
+    
+  
+
+
+</body>
+
+</html>

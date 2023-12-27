@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aetherium Client 1.8.9</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="intro" id="intro">
+    <img src="logo.png" alt="">
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
+  </div>
+  <script>
+var i = 0;
+
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+
+    function frame() {
+      // Randomly change the increment value for irregular movement
+      var increment = Math.random() * 2; // Change this factor as needed
+      width += increment;
+
+      if (width >= 100) {
+        document.getElementById('intro').style.display = 'none'
+        clearInterval(id);
+        i = 0;
+      } else {
+        elem.style.width = width + "%";
+        requestAnimationFrame(frame);
+      }
+    }
+
+    frame(); // Initial call to start the animation
+  }
+}
+
+move();
+
+  </script>
+    <img id="parallax" class="bg">
+    <script>const parallax = document.getElementById('parallax');
+
+      window.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth - e.pageX * 5) / 100;
+        const y = (window.innerHeight - e.pageY * 5) / 100;
+      
+        parallax.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+      </script>
+    <div class="navbar" id="navbar">
+      <div class="brand">
+      </div>
+      <div class="center">
+        
+      </div>
+      <div class="right">
+    <div id="closebtn" onclick="window.close()" style="-webkit-app-region: none;" class="navelem">
+          <i class="bx bx-x"></i>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="home" id="home">
+      <img class="logo" src="logo.png" alt="">
+      <div class="bottombar">
+        <div class="navelem" onclick="location.href = 'modmenu.html'">
+          SINGLEPLAYER
+        </div>
+        <div class="navelem">
+          MULTIPLAYER
+        </div>
+        
+        <div class="fsdfds">
+          <div class="navelem">
+            <i class="bx bx-grid-alt"></i>
+          </div>
+          <div class="navelem">
+            <i class="bx bx-cog"></i>
+          </div>
+          <div class="navelem">
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="navelem">
+            <i class="bx bxl-discord-alt"></i>
+          </div>
+        </div>
+      </div>
+      <div class="fastjoin">
+        <img src="https://w0.peakpx.com/wallpaper/42/176/HD-wallpaper-hypixel-logo-cube-hh-hhh-hhhh-hhhhh-logos-minecraft.jpg" alt="">
+         <img src="https://dl.labymod.net/img/server/minemen/icon@2x.png" alt="">
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+        <div class="empty">+</div>
+      </div>
+    </div>
+  <div class="footer">
+    <p>Minecraft 1.8.9 | Aetherium Client</p>
+    <p>Not affiliated with Mojang</p>
+  </div>
+    
+  
+
+
+</body>
+
+</html>
