@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soar Lite</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onclick="document.getElementById('audio').src = `1.mp3`;document.getElementById('audio').play()">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img {
+    width: 120px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+}
+.brand {
+    display: flex;
+    margin-top: 30vh;
+}
+h1 {
+    margin-top: 60px;
+    margin-left: 5px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+}
+.buttons {
+    margin: 50px;
+}
+button {
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    background-color: #1f1f1f73;
+    border: #999999 1px solid;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 22px;
+    width: 250px;
+    padding: 25px;
+}
+button:hover {
+    background-color: #1f1f1f;
+    border: #ffffff 2px solid;
+}
+.bg{
+    height: 160vh;
+    width: auto;
+    position: absolute;
+    z-index: -1;
+    filter: blur(10px);
+}
+.intro {
+    background-color: #0a0a0a;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+}
+
+#myProgress {
+  overflow: hidden;
+  margin-top: 80px;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #23232395;
+    border: 2px solid #414141;
+}
+
+#myBar {
+  width: 1%;
+  border-radius: 20px;
+  height: 15px;
+  background-color: rgb(161, 161, 161);
+}
+.logo {
+    height: 150px;
+    width: 150px;
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeout {
+    animation: fadeout 1s;
+}
+.worlds {
+    display: flex;
+    justify-content: center;
+        margin-top: 5px;
+        background-color: #000000c0;
+        width: 100%;
+        height: 80vh;
+    }
+    h2{
+        margin-top: 30px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 400;
+        filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    }
+    .bg{
+        z-index: -1;
+        filter: blur(10px);
+        z-index: -10;
+  position: fixed;
+  width: 120%;
+  height: 150vh;
+    }
+.sp {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.world {
+    padding: 5px;
+    margin: 5px;
+    height: 70px;
+    width: 450px;
+}
+.hidden {
+    display: none;
+}
+p {
+    color: #929292;
+    height: 20px;
+}
+.selected {
+    border: 2px solid #929292;
+}
+
+    </style>
+      <div  class="intro" id="intro">
+        <img class="logo" src="logo.png" alt="">
+        <div id="myProgress">
+          <div id="myBar"></div>
+        </div>
+      </div>
+      <script>
+    var i = 0;
+    
+    function move() {
+      if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        var width = 1;
+    
+        function frame() {
+          var increment = Math.random() * 1;
+          width += increment;
+    
+          if (width >= 100) {
+            document.getElementById('intro').classList.add('fadeout')
+            setTimeout(() => {
+                document.getElementById('intro').style.display = 'none'
+            }, 800);
+            i = 0;
+            
+          } else {
+            elem.style.width = width + "%";
+            requestAnimationFrame(frame);
+          }
+        }
+    
+        frame(); // Initial call to start the animation
+      }
+    }
+    
+    move();
+    
+      </script>
+    <img id="parallax" class="bg" src="https://preview.redd.it/ehvgoqf2grd61.png?width=1920&format=png&auto=webp&s=d6cb17f773a8c058957349fee592e906437176ba" alt="">
+    <script>const parallax = document.getElementById('parallax');
+
+        window.addEventListener('mousemove', (e) => {
+          const x = (window.innerWidth - e.pageX * 5) / 100;
+          const y = (window.innerHeight - e.pageY * 5) / 100;
+        
+          parallax.style.transform = `translateX(${x}px) translateY(${y}px)`;
+        });
+        </script>
+    <div id="brand" class="brand">
+        <img src="logo.png" alt="">
+        <h1>Lite</h1>
+        <audio id="audio" src="3.mp3"></audio>
+    </div>
+    
+    <div id="buttons" class="buttons">
+        <button onclick="document.getElementById('sp').style.display = 'flex'">Singleplayer <i class="bx bx-user"></i></button>
+        <button>Multiplayer <i class="bx bx-user"></i></button>
+        <button>Settings <i class="bx bx-cog"></i></button>
+        <button>Exit <i class="bx bx-x"></i></button>
+    </div>
+    
+    <div style="display: none;" class="sp" id="sp">
+        <img class="bg" src="https://preview.redd.it/ehvgoqf2grd61.png?width=1920&format=png&auto=webp&s=d6cb17f773a8c058957349fee592e906437176ba" alt="">
+        <h2>Select World</h2>
+        <div class="worlds">
+            <div id="world" class="world" onclick="document.getElementById('world').classList.add('selected')">
+                <p style="color: #fff;">New World</p>
+                <p>New World (01/01/2024 12:00)</p>
+                <p>Creative Mode, Cheats</p>
+            </div>
+        </div>
+        <div class="wbuttons">
+            <style>
+                .buttonss {
+                    display: flex;
+                    width: 600px;
+                }
+                .topsb {
+                    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    background-color: #1f1f1f73;
+    border: #999999 1px solid;
+    color: #fff;
+    display: flex;
+                    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    padding: 0;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 280px;
+                }
+                .bottomssb {
+                    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    background-color: #1f1f1f73;
+    border: #999999 1px solid;
+    color: #fff;
+    display: flex;
+                    justify-content: center;
+    align-items: center;
+    height: 40px;
+
+    padding: 0;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 280px;
+                }
+            </style>
+            <div class="buttonss">
+                <button class="topsb">Play Selected World</button>
+                <button class="topsb">Create New World</button>
+            </div>
+            <div class="buttonss">
+                <button class="bottomssb">Rename</button>
+                <button class="bottomssb">Delete</button>
+                <button class="bottomssb">Re-Create</button>
+                <button onclick="document.getElementById('sp').style.display = 'none'" class="bottomssb">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

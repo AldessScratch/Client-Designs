@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soar Lite Launcher</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body style="background-color: #7398c2;">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: -1;
+    border-radius: 0px 0px 5px 5px;
+    width: 799px;
+    height: 500px;
+    background-color: #1a1a1a;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+}
+.cards {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    height: 180px;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514)) brightness(80%);
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 10px; 
+    font-weight: 600;
+}
+.selected {
+    filter:  drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    border: 2px white solid;
+    height: 200px;
+}
+p {
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+}
+button {
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.514));
+    background-color: #1f1f1f73;
+    border: #999999 1px solid;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 22px;
+    width: 250px;
+    padding: 25px;
+}
+.image {
+    height: 80px;
+    filter: drop-shadow(2px 2px 5px #00000083);
+}
+
+    </style>
+    <img src="window.png" alt="">
+    <div class="window">
+            <img class="image" src="logo.png" alt="">
+        <div class="cards">
+            <div class="card" style="background-image: url('./1.8.9.png');">
+                <p>1.7.10</p>
+            </div>
+            <div class="card selected" style="background-image: url('./1.8.9.png');">
+                <p>1.8.9</p>
+            </div>
+            <div class="card" style="background-image: url('./1.12.2.png');">
+                <p>1.12.2</p>
+            </div>
+        </div>
+        <button>Launch 1.8.9 <i class="bx bx-play"></i></button>
+    </div>
+</body>
+</html>
