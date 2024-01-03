@@ -1,3 +1,4 @@
 - Aetherium Client: https://mcclientdesigns.netlify.app/aetheriumclient
 - Notro Client: https://mcclientdesigns.netlify.app/notroclient
 - Soar Lite: https://mcclientdesigns.netlify.app/soarlite
+- Soar Launcher: https://mcclientdesigns.netlify.app/soarlauncher
