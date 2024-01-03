@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soar Launcher</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="topbar">
+            <div class="left"  onclick="document.getElementById('newslist').classList.remove('hidden');document.getElementById('settings').classList.add('hidden');document.getElementById('cogicon').classList.remove('selected')"> Soar Launcher</div>
+            <div class="right">
+                <i class="bx bx-minus"></i>
+                <i class="bx bx-x"></i>
+            </div>     
+        </div>
+        <div id="newslist" class="newslist">
+            <img src="logo.png" alt="">
+            <h1>The experience you always wanted</h1>
+            <div class="sectionname">Recent news</div>
+            <div class="news">
+                <p>EldoDebug</p>
+                <p>
+                    Happy New Year! (in Japan)
+                    Soar Client will continue to improve and develop in 2024!
+                    This year I will be announcing Soar Client 8.0!
+                    In addition to that I will be very free from July onwards, so Soar Client will develop faster!
+                    Thank you for your continued support this year!</p>
+            </div>
+            <div class="news">
+                <p>EldoDebug</p>
+                <p>Happy New Year!</p>
+            </div>
+            <div class="news">
+                <p>EldoDebug</p>
+                <p>Happy Christmas!</p>
+            </div>
+            <div class="news">
+                <p>EldoDebug</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt velit repellendus reprehenderit perspiciatis incidunt nulla beatae aliquam atque facilis, nam sit debitis. Eos sequi tempora odio corporis. Quibusdam, quisquam eveniet?</p>
+            </div>
+        </div>
+        <div class="settings hidden" id="settings">
+
+        </div>
+        <div class="bottombar">
+            <div class="navelem">
+                <img src="logo copy.png" alt="">
+                <p>Account</p>
+            </div>
+            <button>LAUNCH 1.8.9</button>
+            <div onclick="document.getElementById('newslist').classList.toggle('hidden');document.getElementById('settings').classList.toggle('hidden');document.getElementById('cogicon').classList.toggle('selected')" class="navelem">
+                <i class="bx bx-cog" id="cogicon"></i>
+                <p>Settings</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
